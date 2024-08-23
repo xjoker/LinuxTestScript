@@ -61,7 +61,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # 检查是否安装了所需的命令
-for cmd in fio jq; do
+for cmd in fio jq bc; do
     if ! command -v $cmd &> /dev/null; then
         echo "$cmd 未安装。正在安装..."
         apt-get update && apt-get install -y $cmd
